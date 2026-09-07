@@ -252,9 +252,9 @@ Issues, forks, and PRs are welcome — especially traction data from different a
 
 ## Gallery
 
-| Finished mini sumo wheel | Fresh PL30 casts, right out of the mold |
+| Finished beetleweight (combat) wheel | Mini sumo PL30 casts, fresh out of the mold |
 | --- | --- |
-| <img src="docs/images/cast-minisumo-wheel.jpeg" width="360" height="270"/> | <img src="docs/images/fresh-silicone-casts.png" width="360" height="270"/> |
+| <img src="docs/images/cast-combat-wheel.jpeg" width="360" height="270"/> | <img src="docs/images/fresh-silicone-casts.png" width="360" height="270"/> |
 
 ---
 
