@@ -7,8 +7,10 @@
 ![Robot Classes](https://img.shields.io/badge/robots-mini%20sumo%20%7C%203%20lb-blue)
 ![Tire Material](https://img.shields.io/badge/tire-cast%20silicone-success)
 ![Hub](https://img.shields.io/badge/hub-3D%20printed-orange)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-all%20rights%20reserved-red)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
+
+**Anastasios Karaivazoglou · IRONBRICK | FIBRAN**
 
 <p>
   <img src="docs/images/hero.png" alt="Silicon Wheels hero shot" width="480"/>
@@ -69,28 +71,27 @@ The whole thing is manufacturable on a desktop FDM printer and a workbench: no C
 
 ## Features
 
-- 🔩 **Zero-slip hub interface** — serrated/keyed hub profile locks the tire mechanically.
-- 🎚️ **Tunable durometer** — swap silicone hardness to match surface and strategy.
-- 🪶 **Lightweight** — spoked hub keeps rotating mass low for faster acceleration.
-- 🔁 **Rebuildable** — tires can be recast with minutes of labor; hubs reprint for pennies.
-- 📐 **Parameterized** — change a few variables to generate new diameters, widths, and bores.
-- 🤖 **Drop-in mounting** — sized for common hobby gearmotor shafts (3 mm N20 and 4 mm options).
-- 🏟️ **Two weight classes covered** — geometry validated for mini sumo and 3 lb beetle builds.
+-  **Zero-slip hub interface** — serrated/keyed hub profile locks the tire mechanically.
+-  **Tunable durometer** — swap silicone hardness to match surface and strategy.
+-  **Lightweight** — spoked hub keeps rotating mass low for faster acceleration.
+-  **Rebuildable** — tires can be recast with minutes of labor; hubs reprint for pennies.
+-  **Parameterized** — change a few variables to generate new diameters, widths, and bores.
+-  **Drop-in mounting** — sized for common hobby gearmotor shafts (3 mm N20 and 4 mm options).
+-  **Two weight classes covered** — geometry validated for mini sumo and 3 lb beetle builds.
 
 ## Specifications
 
-<!-- EDIT: Replace the example values below with your real measured specs, then delete this comment. -->
+<!-- EDIT: Add beetle hub bore, mounting method and both as-cast wheel masses — then delete this comment. -->
 
-| Parameter | Value |
-| --- | --- |
-| Outer diameter | 38 mm |
-| Tire width | 20 mm |
-| Hub bore | 3 mm (N20-class shaft; 4 mm variant available) |
-| Hub material | PETG, 6 perimeters, 40% gyroid infill |
-| Tire material | Platinum-cure silicone (e.g., Smooth-On Rebound 25) |
-| Tire durometer | ~25 Shore A (soft-grip tune) |
-| Wheel mass | ~9 g (example build) |
-| Classes | Mini sumo (500 g), 3 lb beetleweight |
+| Parameter | Mini sumo wheel | Beetleweight wheel |
+| --- | --- | --- |
+| Outer diameter | 26.5 mm | 44 mm |
+| Tire width | 19 mm silicone (22 mm overall) | 12 mm |
+| Hub bore | 3 mm, M4 setscrew tap | — |
+| Hub material | Machined aluminum rim — [JSumo JS2622](https://jsumo.com/js2622-aluminum-silicone-wheel-pair) | TPU, printed rim/hub |
+| Tire material | PL30 — 2-part platinum-cure RTV, 1:1 by weight | PL30 — 2-part platinum-cure RTV, 1:1 by weight |
+| Tire durometer | ~30 Shore A | ~30 Shore A |
+| Wheel mass | 12 g (as-sold JS2622) | — |
 
 ## Repository layout
 
@@ -98,11 +99,11 @@ The whole thing is manufacturable on a desktop FDM printer and a workbench: no C
 Silicon_Wheels/
 ├── cad/                 # Parametric source (OpenSCAD / Fusion 360 / FreeCAD)
 ├── stls/                # Printable hub files
-│   ├── hub_38mm_3mm-bore.stl
-│   └── hub_38mm_4mm-bore.stl
+│   ├── hub_26.5mm_minisumo.stl
+│   └── hub_44mm_beetle_tpu-rim.stl
 ├── molds/               # Printable tire molds (two-piece, keyed)
-│   ├── mold_38mm_top.stl
-│   └── mold_38mm_bottom.stl
+│   ├── mold_26.5mm_top.stl
+│   └── mold_26.5mm_bottom.stl
 ├── docs/
 │   └── images/          # Photos used in this README
 └── README.md
@@ -113,43 +114,50 @@ Silicon_Wheels/
 **Process at a glance:**
 
 ```text
-print hub ──► print mold ──► mix & degas silicone ──► pour ──► cure ──► demold ──► true & clean
+print mold ──► clean & release ──► mix silicone ──► clamp & pour ──► cure ──► demold & trim ──► mount & test
 ```
 
 ### Bill of materials
 
-| Item | Qty | Notes |
-| --- | --- | --- |
-| Filament (PLA or PETG) | ~30 g | Hub + one mold set |
-| Platinum-cure silicone | ~40 g | Smooth-On Rebound 25, Sorta-Clear, VytaFlex, etc. |
-| Mold release agent | 1 | Ease Release 200 or equivalent (platinum-safe) |
-| Mixing cups + stir sticks | 2 | Slow, thorough mixing avoids entrained air |
-| Digital scale (0.1 g) | 1 | For by-weight mixes |
-| Nitrile gloves | 1 pair | Keep uncured silicone off skin |
-| Isopropyl alcohol | small bottle | Surface prep + cleanup |
-| Vacuum chamber *(optional)* | 1 | Bubble-free tires; degassing is strongly recommended |
+| Item | Qty | Price | Notes |
+| --- | --- | --- | --- |
+| [PL30 platinum-cure silicone — 2×500 g kit](https://www.pacoartcenter.gr/en/platinum-cure-silicone-rubber-compound.html) (Paco Art Center) | 1 kit (1 kg) | €33.90 | Reference tire material — 2-part platinum RTV, mix 1:1 by weight; a wheel pair needs ~40 g, so one kit casts many sets. Bigger kits available up to 2×5 kg (€290). Smooth-On Rebound 25, Sorta-Clear, VytaFlex work as alternatives |
+| [Silicone pigment — 25 g](https://www.pacoartcenter.gr/en/crafts/mold-making-casting/mold-making/silicone-pigments.html) (Paco Art Center) | 1 | €3.90 | Optional color. Super-concentrated, platinum-safe: ~10 drops per 100 ml (0.01–3% by weight). Overdosing can inhibit curing or soften the tire — test on a small batch first |
+| [JSumo JS2622 aluminum wheel pair](https://jsumo.com/js2622-aluminum-silicone-wheel-pair) | 1 pair | $12.95 | Mini sumo variant — machined rim, 3 mm bore + M4 setscrew; cast PL30 into its 19 mm silicone groove |
+| Filament | ~30 g | — | PETG for the mold, TPU 95A for the beetle rim/hub; PLA works for optional rigid hubs |
+| [Mold securing screws](https://s.click.aliexpress.com/e/_c2QYYCJZ) + [nuts](https://s.click.aliexpress.com/e/_c2IxNp8B) | 4 + 4 | — | Bolt the two mold halves together — keeps the alignment pins seated and stops silicone leaking along the parting line |
+| Mold release agent | 1 | — | Ease Release 200 or equivalent (platinum-safe) |
+| [Plastic mixing cups](https://s.click.aliexpress.com/e/_c4EeuXZp) | 2 | — | One for mixing, one for topping off — mix slowly and thoroughly to avoid entrained air |
+| [Wooden stir sticks](https://s.click.aliexpress.com/e/_c2xJT4WR) | a few | — | Scrape the walls and bottom of the cup while mixing parts A + B |
+| [Digital scale (0.1 g)](https://s.click.aliexpress.com/e/_c34q1PFz) | 1 | — | Required for PL30's 1:1 by-weight mix |
+| Nitrile gloves | 1 pair | — | Keep uncured silicone off skin; latex inhibits PL30 |
+| Isopropyl alcohol | small bottle | — | Surface prep + cleanup |
+| [Carving blades](https://s.click.aliexpress.com/e/_c3cynCwB) | 1 set | — | Trim flash and excess silicone after demolding |
+| Vacuum chamber *(optional)* | 1 | — | Bubble-free tires; degassing is strongly recommended |
 
 > [!WARNING]
-> **Platinum-cure silicones are inhibition-sensitive.** Uncured SLA resin, sulfur-containing clay, some spray releases, and fresh paint can prevent curing. Only use platinum-safe release agents, and if you must mold against an SLA print, wash and post-cure it thoroughly first — FDM molds are the safe default.
+> **Platinum-cure silicones are inhibition-sensitive.** Uncured SLA resin, sulfur-containing clay, some spray releases, and fresh paint can prevent curing — even latex gloves can poison the cure, so use nitrile or vinyl only. Only use platinum-safe release agents, and if you must mold against an SLA print, wash and post-cure it thoroughly first — FDM molds are the safe default.
 
 ### Print settings
 
+**All printed parts are made on a Bambu Lab A1 mini.**
+
 | Part | Material | Layer height | Walls | Infill | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Hub | PETG (PLA works) | 0.16–0.20 mm | 5–6 | 35–45% gyroid | Strong walls matter for grub-screw clamping |
-| Mold | PLA | 0.20 mm | 4 | 20% | Keyed two-piece design prints support-free |
+| Hub (rigid) | PETG (PLA works) | 0.16–0.20 mm | 5–6 | 35–45% gyroid | Strong walls matter for grub-screw clamping |
+| Hub (TPU rim) | TPU 95A | 0.20–0.25 mm | 4 | 15–20% | Flexible rim/hub bonds well to cast silicone; print slow |
+| Mold | PETG | 0.20 mm | 4 | 20% | Keyed two-piece design prints support-free |
 
 ### Casting procedure
 
-1. **Prep the mold** — spray lightly with release agent, wipe out the excess with a lint-free cloth, and blow out debris with compressed air.
-2. **Prep the hub** — wipe with IPA to remove skin oils and printing residue. Clean parts bond better.
-3. **Mix the silicone** — combine parts A and B at the datasheet ratio. Mix slowly and thoroughly, scraping the walls and bottom of the cup.
-4. **Degas** — pull a vacuum until the mix rises and collapses (2–3 minutes). Skip this step and you *will* get tread bubbles.
-5. **Pour** — pour in a thin, high stream into the mold's lowest corner to minimize entrained air. Fill to about 80%.
-6. **Insert the hub** — press the hub into the liquid silicone until it bottoms out. Silicone squeezing up through the keying channels is exactly what you want.
-7. **Top off and cure** — fill to the mold rim, scrape flush with a spreader, and cure for the datasheet time at room temperature.
-8. **Demold** — flex the mold and work the wheel out hub-side first. Trim flash with flush cutters or sharp scissors.
-9. **True and clean** — spin-check on the shaft, lightly sand any proud seam line on the tread, and wipe with IPA before running.
+1. **Prepare the mold** — clean both halves of the 3D-printed mold thoroughly with isopropyl alcohol, then apply a thin layer of release agent to the inner surfaces (e.g., mold release spray or vaseline). Place the bottom half of the mold on a flat surface and insert the aluminum rim — wipe the rim with IPA first; clean surfaces bond better.
+2. **Mix the silicone** — measure 7 g of part A and 7 g of part B into a cup (PL30 mixes 1:1 by weight), add one drop of silicone pigment for color, and mix slowly for 2–3 minutes to avoid bubbles.
+3. **Cast the wheel** — carefully place the top mold half and clamp it firmly with the securing screws and nuts. Slowly pour the silicone into the mold until it is completely filled, then let it cure for the recommended time (usually 6–12 hours).
+4. **Demold and finish** — once cured, gently open the mold and remove the wheel. Trim any excess silicone (flash) with a carving blade or small scissors.
+5. **Mount and test** — mount the silicone wheel on the mini sumo axle (M4 setscrew against the shaft flat) and test grip on the arena surface.
+
+> [!TIP]
+> For perfectly bubble-free tires you can degas the mixed silicone in a vacuum chamber for 2–3 minutes before pouring (see the BOM) — slow, thorough mixing already gets you most of the way there.
 
 ### Assembly
 
@@ -160,7 +168,7 @@ Because the tire is cast *around* the hub, there is no separate assembly step �
 
 ## Mounting to your robot
 
-- **3 mm N20-style shafts (mini sumo):** the hub bore is a snug 3 mm; secure against the shaft's flat with the grub screw and a drop of medium threadlocker.
+- **3 mm N20-style shafts (mini sumo):** the JSumo JS2622 aluminum rim has a 3 mm bore with an M4 tapped setscrew — clamp on the shaft's flat with a drop of medium threadlocker.
 - **4 mm shafts (20 mm+ gearmotors, beetleweight drivetrains):** use the 4 mm bore variant and clamp on the motor's shaft flat.
 - Torque the grub screw against the flat, not the shaft diameter, and re-check tightness after your first few hits — impacts back screws out.
 
@@ -234,7 +242,7 @@ Issues, forks, and PRs are welcome — especially traction data from different a
 
 ## License
 
-Released under the **MIT License** — see [`LICENSE`](LICENSE). Hardware design files are included under the same terms.
+**All rights reserved.** See [`LICENSE`](LICENSE) for the full notice. The documentation, hardware design files, and images may not be copied, redistributed, or used to create derivative works without prior written permission — reach out if you'd like to build on this project.
 
 ## Acknowledgments
 
@@ -254,6 +262,6 @@ Released under the **MIT License** — see [`LICENSE`](LICENSE). Hardware design
 
 <div align="center">
 
-**Built to hook up.** ⚙️
+**Built to hook up.** 
 
 </div>
