@@ -6,14 +6,14 @@
 
 ![Robot Classes](https://img.shields.io/badge/robots-mini%20sumo%20%7C%203%20lb-blue)
 ![Tire Material](https://img.shields.io/badge/tire-cast%20silicone-success)
-![Hub](https://img.shields.io/badge/hub-3D%20printed-orange)
+![Hub](https://img.shields.io/badge/hub-aluminum%20%7C%20printed%20TPU-orange)
 ![License](https://img.shields.io/badge/license-all%20rights%20reserved-red)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 
 **Anastasios Karaivazoglou · IRONBRICK | FIBRAN**
 
 <p>
-  <img src="docs/images/hero.png" alt="Silicon Wheels hero shot" width="480"/>
+  <img src="docs/images/cast-minisumo-wheel.jpeg" alt="Finished mini sumo wheel — PL30 silicone cast on a JSumo JS2622 aluminum rim" width="480"/>
 </p>
 
 </div>
@@ -53,7 +53,7 @@ Silicon Wheels is a set of open-hardware, high-grip wheels designed from the gro
 - **Mini sumo (500 g, 10 × 10 cm footprint)** — where the match is won or lost by static grip and pushing force.
 - **3 lb beetleweight combat robots** — where wheels must survive hits, spin-outs, and arena grit while still hooking up under full throttle.
 
-Each wheel is a two-part design: a lightweight **3D-printed hub** with a keyed outer profile, and a **cast silicone tire** poured directly around it. The silicone locks onto the serrated hub mechanically *and* chemically, so the tire can't spin, slip, or peel off — no adhesives required.
+Each wheel is a two-part design: a lightweight **hub** — machined aluminum for mini sumo (JSumo JS2622), printed TPU for the beetleweight — with a keyed outer profile, and a **cast silicone tire** poured directly around it. The silicone locks onto the serrated hub mechanically *and* chemically, so the tire can't spin, slip, or peel off — no adhesives required.
 
 The whole thing is manufacturable on a desktop FDM printer and a workbench: no CNC, no lathe, no special tooling.
 
@@ -81,13 +81,13 @@ The whole thing is manufacturable on a desktop FDM printer and a workbench: no C
 
 ## Specifications
 
-<!-- EDIT: Add beetle hub bore, mounting method and both as-cast wheel masses — then delete this comment. -->
+<!-- EDIT: Add the as-cast wheel masses when weighed — then delete this comment. -->
 
 | Parameter | Mini sumo wheel | Beetleweight wheel |
 | --- | --- | --- |
 | Outer diameter | 26.5 mm | 44 mm |
 | Tire width | 19 mm silicone (22 mm overall) | 12 mm |
-| Hub bore | 3 mm, M4 setscrew tap | — |
+| Hub bore | 3 mm, M4 setscrew tap | 4 mm |
 | Hub material | Machined aluminum rim — [JSumo JS2622](https://jsumo.com/js2622-aluminum-silicone-wheel-pair) | TPU, printed rim/hub |
 | Tire material | PL30 — 2-part platinum-cure RTV, 1:1 by weight | PL30 — 2-part platinum-cure RTV, 1:1 by weight |
 | Tire durometer | ~30 Shore A | ~30 Shore A |
@@ -97,15 +97,14 @@ The whole thing is manufacturable on a desktop FDM printer and a workbench: no C
 
 ```text
 Silicon_Wheels/
-├── cad/                 # Parametric source (OpenSCAD / Fusion 360 / FreeCAD)
-├── stls/                # Printable hub files
-│   ├── hub_26.5mm_minisumo.stl
-│   └── hub_44mm_beetle_tpu-rim.stl
-├── molds/               # Printable tire molds (two-piece, keyed)
-│   ├── mold_26.5mm_top.stl
-│   └── mold_26.5mm_bottom.stl
+├── Combat_Robot_Wheels/            # Beetleweight wheel design & mold
+│   ├── Combat_Robot_Silicon_Mold.stl   # Printable two-piece silicone mold
+│   ├── Front_Wheel.step            # CAD, front wheel (TPU rim/hub)
+│   └── Rear_Wheel.step             # CAD, rear wheel (TPU rim/hub)
+├── Mini_Sumo_Wheels/               # Mini sumo (26.5 × 22 mm) mold
+│   └── Mini_Sumo_Silicon_Mold.stl  # Printable two-piece silicone mold
 ├── docs/
-│   └── images/          # Photos used in this README
+│   └── images/                     # Photos used in this README
 └── README.md
 ```
 
@@ -144,13 +143,13 @@ print mold ──► clean & release ──► mix silicone ──► clamp & po
 
 | Part | Material | Layer height | Walls | Infill | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Hub (rigid) | PETG (PLA works) | 0.16–0.20 mm | 5–6 | 35–45% gyroid | Strong walls matter for grub-screw clamping |
+| Hub (rigid, optional) | PETG (PLA works) | 0.16–0.20 mm | 5–6 | 35–45% gyroid | For custom bores / direct drive; strong walls matter for grub-screw clamping |
 | Hub (TPU rim) | TPU 95A | 0.20–0.25 mm | 4 | 15–20% | Flexible rim/hub bonds well to cast silicone; print slow |
 | Mold | PETG | 0.20 mm | 4 | 20% | Keyed two-piece design prints support-free |
 
 ### Casting procedure
 
-1. **Prepare the mold** — clean both halves of the 3D-printed mold thoroughly with isopropyl alcohol, then apply a thin layer of release agent to the inner surfaces (e.g., mold release spray or vaseline). Place the bottom half of the mold on a flat surface and insert the aluminum rim — wipe the rim with IPA first; clean surfaces bond better.
+1. **Prepare the mold** — clean both halves of the 3D-printed mold thoroughly with isopropyl alcohol, then apply a thin layer of release agent to the inner surfaces (e.g., mold release spray or vaseline). Place the bottom half of the mold on a flat surface and insert the rim (aluminum JS2622 for mini sumo, printed TPU rim for the beetle) — wipe it with IPA first; clean surfaces bond better.
 2. **Mix the silicone** — measure 7 g of part A and 7 g of part B into a cup (PL30 mixes 1:1 by weight), add one drop of silicone pigment for color, and mix slowly for 2–3 minutes to avoid bubbles.
 3. **Cast the wheel** — carefully place the top mold half and clamp it firmly with the securing screws and nuts. Slowly pour the silicone into the mold until it is completely filled, then let it cure for the recommended time (usually 6–12 hours).
 4. **Demold and finish** — once cured, gently open the mold and remove the wheel. Trim any excess silicone (flash) with a carving blade or small scissors.
@@ -191,7 +190,7 @@ Because the tire is cast *around* the hub, there is no separate assembly step �
 
 ## Measured performance
 
-<!-- EDIT: Fill in your own traction-test numbers here, or delete this section until you have data. -->
+<!-- EDIT: Pending — fill the µs column after running the pull test below. -->
 
 | Surface | Static friction coefficient (µs, measured) | Notes |
 | --- | --- | --- |
@@ -199,7 +198,13 @@ Because the tire is cast *around* the hub, there is no separate assembly step �
 | Painted steel arena floor | — | |
 | Aluminum weapon arena | — | |
 
-*Method: robot weight × gravity vs. pull force at first slip, three-run average.*
+**How to measure µs** (~15 min per surface):
+
+1. Wipe the tires with IPA and let them dry.
+2. Weigh the robot in grams (with battery installed).
+3. Hook a luggage/fish scale to the rear and pull **horizontally**, increasing force slowly.
+4. Record the scale reading at the first slip — wheels start to slide or spin, not roll.
+5. µs = pull reading (g) ÷ robot weight (g). Repeat 3× per surface and average.
 
 ## Troubleshooting
 
@@ -251,12 +256,9 @@ Issues, forks, and PRs are welcome — especially traction data from different a
 
 ## Gallery
 
-<!-- EDIT: Drop photos into docs/images/ and uncomment the table below. -->
-<!--
-| Mini sumo build | Beetleweight build | Mold & fresh casting |
-| --- | --- | --- |
-| ![](docs/images/minisumo.png) | ![](docs/images/beetle.png) | ![](docs/images/mold.png) |
--->
+| Finished mini sumo wheel | Fresh PL30 casts, right out of the mold |
+| --- | --- |
+| ![](docs/images/cast-minisumo-wheel.jpeg) | ![](docs/images/fresh-silicone-casts.png) |
 
 ---
 
