@@ -12,10 +12,6 @@
 
 **Anastasios Karaivazoglou · IRONBRICK | FIBRAN**
 
-<p>
-  <img src="docs/images/cast-minisumo-wheel.jpeg" alt="Finished mini sumo wheel — PL30 silicone cast on a JSumo JS2622 aluminum rim" width="480"/>
-</p>
-
 </div>
 
 > [!NOTE]
@@ -258,7 +254,7 @@ Issues, forks, and PRs are welcome — especially traction data from different a
 
 | Finished mini sumo wheel | Fresh PL30 casts, right out of the mold |
 | --- | --- |
-| ![](docs/images/cast-minisumo-wheel.jpeg) | ![](docs/images/fresh-silicone-casts.png) |
+| <img src="docs/images/cast-minisumo-wheel.jpeg" width="360" height="270"/> | <img src="docs/images/fresh-silicone-casts.png" width="360" height="270"/> |
 
 ---
 
